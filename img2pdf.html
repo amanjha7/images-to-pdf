@@ -65,10 +65,23 @@
         imageWrapper.appendChild(imageElement);
 
         // Add cropper.js instance
+        // const cropper = new Cropper(imageElement, {
+        //   aspectRatio: 0,
+        //   viewMode: 1,
+        // });
+
+        // Add cropper.js instance
         const cropper = new Cropper(imageElement, {
-          aspectRatio: 0,
-          viewMode: 1,
+          aspectRatio: 0, // Freeform rectangle
+          background: false, // Disable background overlay
+          guides: false, // Remove guides for simplicity
+          highlight: false, // Disable highlight on crop box
+          movable: false, // Disable image movement
+          zoomable: false, // Disable zooming
+          cropBoxResizable: true, // Enable resizing of the rectangle
+          cropBoxMovable: true, // Enable moving the rectangle
         });
+
 
         // Add crop and rotate controls
         const controls = document.createElement("div");
